@@ -51,7 +51,6 @@ nav a:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 20px;
-  margin-top: 20px;
 }
 
 .jumbotron {
@@ -88,6 +87,9 @@ main {
 
 #content{
   flex: 5;
+   display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
 }
 
 aside {
@@ -97,9 +99,20 @@ header {
   display: inline;
 }
 
-@media screen and (max-width: 1000px) {
-   #content, aside {
-    width: 100%;
-    padding: 0;
+@media screen and (max-width: 1200px) {
+    main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+  main aside {
+    align-self: stretch;
   }
 }
